@@ -20,16 +20,16 @@
     --ink: #1A1208; --cream: #FAF6EE; --cream2: #F2EAD8;
     --muted: #7A6A4A; --white: #FFFFFF; --card-radius: 16px;
   }
-  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; overflow-x: hidden; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; overflow-x: hidden; width: 100%; }
   nav { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 3rem; background: var(--ink); position: sticky; top: 0; z-index: 100; }
   .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--gold-light); letter-spacing: 0.02em; }
   .nav-logo span { color: var(--gold); }
   .nav-links { display: flex; gap: 2rem; }
   .nav-links a { color: #C8B98A; text-decoration: none; font-size: 0.85rem; font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: var(--gold-light); }
-  .nav-cta { background: var(--gold); color: var(--ink); font-weight: 500; font-size: 0.85rem; padding: 0.5rem 1.2rem; border-radius: 6px; text-decoration: none; transition: background 0.2s; display: inline-flex; align-items: center; gap: 6px; }
-  .nav-cta:hover { background: var(--gold-light); }
-  .hero { background: var(--ink); padding: 5rem 3rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; min-height: 520px; }
+
+  /* HERO */
+  .hero { background: var(--ink); padding: 5rem 3rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; min-height: 520px; width: 100%; }
   .hero-label { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 1rem; }
   .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.4rem; font-weight: 900; color: var(--gold-light); line-height: 1.1; margin-bottom: 1.2rem; }
   .hero h1 em { font-style: italic; color: var(--gold); }
@@ -51,16 +51,22 @@
   .book-2 .book-title { color: var(--ink); }
   .book-author { font-size: 0.65rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.4rem; }
   .book-2 .book-author { color: #5A3A10; }
-  .stats-bar { background: var(--gold); padding: 1rem 3rem; display: flex; justify-content: space-around; align-items: center; gap: 1rem; flex-wrap: wrap; }
+
+  /* STATS */
+  .stats-bar { background: var(--gold); padding: 1rem 3rem; display: flex; justify-content: space-around; align-items: center; gap: 1rem; flex-wrap: wrap; width: 100%; }
   .stat { text-align: center; }
   .stat-num { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900; color: var(--ink); }
   .stat-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); font-weight: 500; }
   .stat-divider { width: 1px; height: 36px; background: var(--gold-dark); opacity: 0.4; }
-  .section { padding: 4rem 3rem; }
+
+  /* SECTIONS */
+  .section { padding: 4rem 3rem; width: 100%; }
   .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2.5rem; }
   .section-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--ink); }
   .section-title span { color: var(--gold); }
   .see-all { font-size: 0.82rem; color: var(--gold-dark); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; border-bottom: 1px solid var(--gold-dark); padding-bottom: 2px; }
+
+  /* BOOK CARDS */
   .books-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
   .book-card { background: var(--white); border-radius: var(--card-radius); overflow: hidden; border: 1px solid #E8DFC8; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
   .book-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(180,140,60,0.15); }
@@ -91,68 +97,114 @@
   .btn-buy:hover { background: var(--gold-dark); }
   .btn-buy-free { width: 100%; background: #2F8A2F; color: white; border: none; border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; }
   .btn-buy-free:hover { background: #236B23; }
+
+  /* CATEGORIES */
   .section-alt { background: var(--cream2); }
   .categories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
   .cat-card { background: var(--white); border: 1px solid #DDD0B0; border-radius: 12px; padding: 1.2rem 1rem; text-align: center; cursor: pointer; transition: border-color 0.2s, transform 0.15s; text-decoration: none; display: block; }
   .cat-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .cat-card.free-cat { border-color: #2F8A2F; }
+  .cat-card.free-cat:hover { border-color: #1A5C1A; background: #F0FFF4; }
   .cat-icon { font-size: 1.6rem; color: var(--gold-dark); margin-bottom: 0.5rem; }
+  .cat-card.free-cat .cat-icon { color: #2F8A2F; }
   .cat-name { font-size: 0.82rem; font-weight: 500; color: var(--ink); }
   .cat-count { font-size: 0.7rem; color: var(--muted); margin-top: 2px; }
+  .cat-card.free-cat .cat-count { color: #2F8A2F; font-weight: 600; }
+
+  /* WHY */
   .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
   .why-card { background: var(--white); border-radius: var(--card-radius); padding: 1.5rem 1.25rem; border-left: 3px solid var(--gold); }
   .why-icon { font-size: 1.5rem; color: var(--gold); margin-bottom: 0.7rem; }
   .why-title { font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
   .why-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+  /* TESTIMONIALS */
   .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
   .testi-card { background: var(--ink); border-radius: var(--card-radius); padding: 1.5rem; }
   .testi-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 0.8rem; letter-spacing: 2px; }
   .testi-text { font-size: 0.88rem; color: #C0A870; line-height: 1.7; margin-bottom: 1rem; font-style: italic; }
   .testi-author { font-size: 0.78rem; color: var(--gold); font-weight: 500; }
-  .author-section { background: var(--ink); padding: 4rem 3rem; display: grid; grid-template-columns: auto 1fr; gap: 2.5rem; align-items: center; }
+
+  /* AUTHOR */
+  .author-section { background: var(--ink); padding: 4rem 3rem; display: grid; grid-template-columns: auto 1fr; gap: 2.5rem; align-items: center; width: 100%; }
   .author-avatar { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--gold-dark), var(--gold)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; color: var(--ink); flex-shrink: 0; }
   .author-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.4rem; }
   .author-name { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--gold-light); margin-bottom: 0.8rem; }
   .author-bio { font-size: 0.9rem; color: #A09070; line-height: 1.7; max-width: 600px; }
-  .cta-banner { background: var(--gold); padding: 3.5rem 3rem; text-align: center; }
+
+  /* CTA */
+  .cta-banner { background: var(--gold); padding: 3.5rem 3rem; text-align: center; width: 100%; }
   .cta-banner h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; color: var(--ink); margin-bottom: 0.8rem; }
   .cta-banner p { color: var(--gold-dark); font-size: 1rem; margin-bottom: 1.8rem; }
   .cta-input-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
   .cta-input { padding: 0.75rem 1.2rem; border-radius: 8px; border: 2px solid transparent; font-size: 0.9rem; width: 280px; background: var(--white); color: var(--ink); outline: none; }
   .btn-dark { background: var(--ink); color: var(--gold-light); font-size: 0.9rem; font-weight: 600; padding: 0.75rem 1.8rem; border-radius: 8px; border: none; cursor: pointer; }
-  footer { background: #0E0C08; padding: 2.5rem 3rem 1.5rem; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 2rem; }
+
+  /* FOOTER */
+  footer { background: #0E0C08; padding: 2.5rem 3rem 1.5rem; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 2rem; width: 100%; }
   .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--gold-light); font-weight: 700; margin-bottom: 0.5rem; }
   .footer-tagline { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
   .footer-col h4 { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.9rem; }
   .footer-col a { display: block; font-size: 0.82rem; color: #7A6A4A; text-decoration: none; margin-bottom: 0.45rem; }
   .footer-col a:hover { color: var(--gold-light); }
-  .footer-bottom { border-top: 1px solid #2A1E0A; padding: 1.2rem 3rem; background: #0E0C08; display: flex; justify-content: space-between; align-items: center; }
+  .footer-bottom { border-top: 1px solid #2A1E0A; padding: 1.2rem 3rem; background: #0E0C08; display: flex; justify-content: space-between; align-items: center; width: 100%; }
   .footer-copy { font-size: 0.75rem; color: #5A4A2A; }
   .footer-socials { display: flex; gap: 1rem; }
   .footer-socials a { font-size: 0.9rem; color: #5A4A2A; text-decoration: none; }
   .footer-socials a:hover { color: var(--gold); }
+
+  /* FREE EBOOKS SECTION */
+  .free-section { background: #F0FFF4; border-top: 3px solid #2F8A2F; border-bottom: 3px solid #2F8A2F; }
+  .free-section .section-title { color: #1A5C1A; }
+  .free-section .section-title span { color: #2F8A2F; }
+
+  /* MOBILE RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.2rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem 2rem; min-height: auto; }
+    .hero h1 { font-size: 2.4rem; }
+    .hero-visual { display: none; }
+    .stats-bar { padding: 1rem 1.2rem; gap: 0.5rem; }
+    .stat-divider { display: none; }
+    .stat-num { font-size: 1.3rem; }
+    .section { padding: 2.5rem 1.5rem; }
+    .books-grid { grid-template-columns: 1fr; }
+    .categories-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .author-section { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; text-align: center; }
+    .author-avatar { margin: 0 auto; }
+    .cta-banner { padding: 2.5rem 1.5rem; }
+    .cta-banner h2 { font-size: 1.6rem; }
+    .cta-input { width: 100%; }
+    footer { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
+    .footer-bottom { flex-direction: column; gap: 0.8rem; text-align: center; padding: 1rem 1.5rem; }
+  }
 </style>
 </head>
 <body>
 
+<!-- NAV — no free ebook button -->
 <nav>
   <div class="nav-logo">Money<span>Compounding</span></div>
   <div class="nav-links">
-    <a href="#">Books</a>
-    <a href="#">Categories</a>
-    <a href="#">Author</a>
-    <a href="#">Blog</a>
+    <a href="#books">Books</a>
+    <a href="#categories">Categories</a>
+    <a href="#author">Author</a>
+    <a href="#free-ebooks">Free Ebooks</a>
   </div>
-  <a href="Passive_Income_Blueprint_Muslims.pdf" target="_blank" class="nav-cta"><i class="ti ti-download"></i> Free Ebook</a>
 </nav>
 
+<!-- HERO — replaced download button with Browse Free Ebooks -->
 <section class="hero">
   <div class="hero-left">
     <div class="hero-label">by Umair Tahir</div>
     <h1>Grow Your Wealth Through <em>Smart</em> Reading</h1>
     <p class="hero-sub">Handpicked financial ebooks on <strong>investing, compounding, and halal wealth-building</strong> — written and curated by Umair Tahir.</p>
     <div class="hero-btns">
-      <a href="Passive_Income_Blueprint_Muslims.pdf" target="_blank" class="btn-primary"><i class="ti ti-download"></i> Download Free Ebook</a>
-      <a href="#books" class="btn-outline">Browse All Books</a>
+      <a href="#free-ebooks" class="btn-primary"><i class="ti ti-books"></i> Browse Free Ebooks</a>
+      <a href="#books" class="btn-outline">All Books</a>
     </div>
   </div>
   <div class="hero-visual">
@@ -171,6 +223,7 @@
   </div>
 </section>
 
+<!-- STATS -->
 <div class="stats-bar">
   <div class="stat"><div class="stat-num">24+</div><div class="stat-label">Premium Ebooks</div></div>
   <div class="stat-divider"></div>
@@ -181,14 +234,13 @@
   <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Halal Content</div></div>
 </div>
 
+<!-- FEATURED BOOKS -->
 <section class="section" id="books">
   <div class="section-header">
     <h2 class="section-title">Featured <span>Books</span></h2>
     <a href="#" class="see-all">View All →</a>
   </div>
   <div class="books-grid">
-
-    <!-- BOOK 1: Passive Income Blueprint — FREE -->
     <div class="book-card">
       <div class="book-cover cover-c">
         <span class="cover-badge free-badge">FREE</span>
@@ -198,15 +250,10 @@
       <div class="book-info">
         <div class="book-card-title">Passive Income Blueprint for Young Muslims</div>
         <div class="book-card-author">by Umair Tahir</div>
-        <div class="book-meta">
-          <span class="book-price-free">FREE</span>
-          <span class="book-rating"><i class="ti ti-star-filled"></i> 5.0</span>
-        </div>
+        <div class="book-meta"><span class="book-price-free">FREE</span><span class="book-rating"><i class="ti ti-star-filled"></i> 5.0</span></div>
         <a href="Passive_Income_Blueprint_Muslims.pdf" target="_blank" class="btn-buy-free"><i class="ti ti-download"></i> Download Free PDF</a>
       </div>
     </div>
-
-    <!-- BOOK 2: Money Compounding Guide — FREE -->
     <div class="book-card">
       <div class="book-cover cover-a">
         <span class="cover-badge free-badge">FREE</span>
@@ -216,15 +263,10 @@
       <div class="book-info">
         <div class="book-card-title">Money Compounding Guide</div>
         <div class="book-card-author">by Umair Tahir</div>
-        <div class="book-meta">
-          <span class="book-price-free">FREE</span>
-          <span class="book-rating"><i class="ti ti-star-filled"></i> 5.0</span>
-        </div>
+        <div class="book-meta"><span class="book-price-free">FREE</span><span class="book-rating"><i class="ti ti-star-filled"></i> 5.0</span></div>
         <a href="Money_Compounding_Guide.pdf" target="_blank" class="btn-buy-free"><i class="ti ti-download"></i> Download Free PDF</a>
       </div>
     </div>
-
-    <!-- BOOK 3: Coming Soon -->
     <div class="book-card">
       <div class="book-cover cover-b">
         <span class="cover-badge">Coming Soon</span>
@@ -238,8 +280,6 @@
         <a href="#" class="btn-buy"><i class="ti ti-shopping-bag"></i> Coming Soon</a>
       </div>
     </div>
-
-    <!-- BOOK 4: Coming Soon -->
     <div class="book-card">
       <div class="book-cover cover-d">
         <span class="cover-badge">Coming Soon</span>
@@ -253,36 +293,74 @@
         <a href="#" class="btn-buy"><i class="ti ti-shopping-bag"></i> Coming Soon</a>
       </div>
     </div>
-
   </div>
 </section>
 
-<section class="section section-alt">
+<!-- FREE EBOOKS SECTION -->
+<section class="section free-section" id="free-ebooks">
+  <div class="section-header">
+    <h2 class="section-title">Free <span>Ebooks</span></h2>
+    <span style="font-size:0.82rem;color:#2F8A2F;font-weight:600;">100% Free — No Sign Up</span>
+  </div>
+  <div class="books-grid">
+    <div class="book-card">
+      <div class="book-cover cover-c">
+        <span class="cover-badge free-badge">FREE</span>
+        <div class="cover-icon">🕌</div>
+        <div class="cover-title">Passive Income Blueprint for Young Muslims</div>
+      </div>
+      <div class="book-info">
+        <div class="book-card-title">Passive Income Blueprint for Young Muslims</div>
+        <div class="book-card-author">by Umair Tahir</div>
+        <div class="book-meta"><span class="book-price-free">FREE</span><span class="book-rating"><i class="ti ti-star-filled"></i> 5.0</span></div>
+        <a href="Passive_Income_Blueprint_Muslims.pdf" target="_blank" class="btn-buy-free"><i class="ti ti-download"></i> Download Free PDF</a>
+      </div>
+    </div>
+    <div class="book-card">
+      <div class="book-cover cover-a">
+        <span class="cover-badge free-badge">FREE</span>
+        <div class="cover-icon">📈</div>
+        <div class="cover-title">Money Compounding Guide</div>
+      </div>
+      <div class="book-info">
+        <div class="book-card-title">Money Compounding Guide</div>
+        <div class="book-card-author">by Umair Tahir</div>
+        <div class="book-meta"><span class="book-price-free">FREE</span><span class="book-rating"><i class="ti ti-star-filled"></i> 5.0</span></div>
+        <a href="Money_Compounding_Guide.pdf" target="_blank" class="btn-buy-free"><i class="ti ti-download"></i> Download Free PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section section-alt" id="categories">
   <div class="section-header">
     <h2 class="section-title">Browse <span>Categories</span></h2>
   </div>
   <div class="categories-grid">
+    <a href="#free-ebooks" class="cat-card free-cat"><div class="cat-icon"><i class="ti ti-gift"></i></div><div class="cat-name">Free Ebooks</div><div class="cat-count">2 free books</div></a>
     <a href="#" class="cat-card"><div class="cat-icon"><i class="ti ti-chart-candle"></i></div><div class="cat-name">Investing</div><div class="cat-count">8 books</div></a>
     <a href="#" class="cat-card"><div class="cat-icon"><i class="ti ti-coin"></i></div><div class="cat-name">Budgeting</div><div class="cat-count">5 books</div></a>
     <a href="#" class="cat-card"><div class="cat-icon"><i class="ti ti-trending-up"></i></div><div class="cat-name">Compounding</div><div class="cat-count">6 books</div></a>
-    <a href="#" class="cat-card"><div class="cat-icon"><i class="ti ti-building-store"></i></div><div class="cat-name">Entrepreneurship</div><div class="cat-count">4 books</div></a>
     <a href="#" class="cat-card"><div class="cat-icon"><i class="ti ti-currency-dollar"></i></div><div class="cat-name">Passive Income</div><div class="cat-count">7 books</div></a>
     <a href="#" class="cat-card"><div class="cat-icon"><i class="ti ti-brain"></i></div><div class="cat-name">Mindset</div><div class="cat-count">4 books</div></a>
   </div>
 </section>
 
+<!-- WHY US -->
 <section class="section">
   <div class="section-header">
     <h2 class="section-title">Why <span>Choose Us?</span></h2>
   </div>
   <div class="why-grid">
-    <div class="why-card"><div class="why-icon"><i class="ti ti-bolt"></i></div><div class="why-title">Instant Download</div><div class="why-desc">Get your ebook immediately after purchase. No waiting, no shipping.</div></div>
-    <div class="why-card"><div class="why-icon"><i class="ti ti-shield-check"></i></div><div class="why-title">100% Halal</div><div class="why-desc">Every book is Shariah-compliant. Pure halal wealth building knowledge.</div></div>
+    <div class="why-card"><div class="why-icon"><i class="ti ti-bolt"></i></div><div class="why-title">Instant Download</div><div class="why-desc">Get your ebook immediately. No waiting, no shipping.</div></div>
+    <div class="why-card"><div class="why-icon"><i class="ti ti-shield-check"></i></div><div class="why-title">100% Halal</div><div class="why-desc">Every book is Shariah-compliant. Pure halal wealth building.</div></div>
     <div class="why-card"><div class="why-icon"><i class="ti ti-device-mobile"></i></div><div class="why-title">Read Anywhere</div><div class="why-desc">PDF format compatible with all devices — phone, tablet, desktop.</div></div>
-    <div class="why-card"><div class="why-icon"><i class="ti ti-refresh"></i></div><div class="why-title">Free Updates</div><div class="why-desc">Buy once, get lifetime access including future revisions and bonus chapters.</div></div>
+    <div class="why-card"><div class="why-icon"><i class="ti ti-refresh"></i></div><div class="why-title">Free Updates</div><div class="why-desc">Buy once, get lifetime access including future revisions.</div></div>
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
 <section class="section" style="background: var(--cream2);">
   <div class="section-header">
     <h2 class="section-title">What Readers <span>Say</span></h2>
@@ -294,7 +372,8 @@
   </div>
 </section>
 
-<section class="author-section">
+<!-- AUTHOR -->
+<section class="author-section" id="author">
   <div class="author-avatar">UT</div>
   <div>
     <div class="author-label">About the Author</div>
@@ -303,6 +382,7 @@
   </div>
 </section>
 
+<!-- CTA -->
 <div class="cta-banner">
   <h2>Start Your Halal Financial Journey Today</h2>
   <p>Join 5,000+ readers. Get first access to new releases and exclusive discounts.</p>
@@ -312,6 +392,7 @@
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
   <div>
     <div class="footer-brand">MoneyCompounding</div>
@@ -319,14 +400,14 @@
   </div>
   <div class="footer-col">
     <h4>Store</h4>
-    <a href="#">All Books</a>
-    <a href="Passive_Income_Blueprint_Muslims.pdf" target="_blank">Free Ebook 1</a>
-    <a href="Money_Compounding_Guide.pdf" target="_blank">Free Ebook 2</a>
+    <a href="#books">All Books</a>
+    <a href="#free-ebooks">Free Ebooks</a>
     <a href="#">New Releases</a>
+    <a href="#">Bundles</a>
   </div>
   <div class="footer-col">
     <h4>Info</h4>
-    <a href="#">About Umair</a>
+    <a href="#author">About Umair</a>
     <a href="#">Blog</a>
     <a href="#">Contact</a>
     <a href="#">Refund Policy</a>
