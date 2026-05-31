@@ -28,9 +28,7 @@ html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--g8);color:var(--ink);overflow-x:hidden;width:100%}
 
 /* ── CUSTOM CURSOR ── */
-.cursor{position:fixed;width:12px;height:12px;background:var(--g4);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s,width .3s,height .3s,background .3s}
-.cursor-ring{position:fixed;width:36px;height:36px;border:2px solid var(--g4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .15s var(--ease),width .3s,height .3s,opacity .3s}
-@media(max-width:768px){.cursor,.cursor-ring{display:none}}
+
 
 /* ── NAV ── */
 nav{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3rem;background:rgba(7,26,14,0.97);backdrop-filter:blur(20px);position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(39,174,96,0.2)}
@@ -116,8 +114,8 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.1rem
 
 /* ── BOOK CARDS — NEXT LEVEL COVERS ── */
 .books-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem}
-.book-card{background:var(--white);border-radius:var(--card-r);overflow:hidden;border:1px solid rgba(39,174,96,.15);transition:transform .4s var(--ease),box-shadow .4s;position:relative}
-.book-card:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 20px 60px rgba(11,61,30,.15)}
+.book-card{background:var(--white);border-radius:var(--card-r);overflow:hidden;border:1px solid rgba(39,174,96,.15);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;position:relative;will-change:transform}
+.book-card:hover{transform:translateY(-10px);box-shadow:0 24px 60px rgba(11,61,30,.25);border-color:rgba(39,174,96,.5)}
 
 /* NEXT LEVEL COVERS */
 .book-cover{height:240px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
@@ -291,8 +289,7 @@ footer{background:#040F07;padding:3rem 3rem 1.5rem;display:grid;grid-template-co
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+
 
 <!-- NAV -->
 <nav>
@@ -361,21 +358,8 @@ footer{background:#040F07;padding:3rem 3rem 1.5rem;display:grid;grid-template-co
 
     <!-- BOOK 1 -->
     <div class="book-card reveal reveal-delay-1">
-      <div class="book-cover cover-passive">
-        <div class="cover-geo">
-          <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="160" cy="40" r="60" fill="white"/>
-            <circle cx="20" cy="200" r="40" fill="white"/>
-            <line x1="0" y1="120" x2="200" y2="120" stroke="white" stroke-width="0.5"/>
-            <line x1="100" y1="0" x2="100" y2="240" stroke="white" stroke-width="0.5"/>
-          </svg>
-        </div>
-        <span class="cover-top-badge badge-free">FREE</span>
-        <div class="cover-content">
-          <span class="cover-icon-big">🕌</span>
-          <div class="cover-book-title">Passive Income Blueprint for Young Muslims</div>
-          <div class="cover-book-author">Umair Tahir • 2026</div>
-        </div>
+      <div class="book-cover" style="padding:0;height:240px;overflow:hidden">
+        <img src="cover1.svg" alt="Passive Income Blueprint Cover" style="width:100%;height:100%;object-fit:cover;display:block"/>
       </div>
       <div class="book-info">
         <div class="book-card-title">Passive Income Blueprint for Young Muslims</div>
@@ -387,23 +371,8 @@ footer{background:#040F07;padding:3rem 3rem 1.5rem;display:grid;grid-template-co
 
     <!-- BOOK 2 -->
     <div class="book-card reveal reveal-delay-2">
-      <div class="book-cover cover-compound">
-        <div class="cover-geo">
-          <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
-            <polyline points="0,200 40,150 80,160 120,100 160,60 200,20" stroke="white" stroke-width="1" fill="none"/>
-            <polyline points="0,220 40,180 80,185 120,130 160,90 200,50" stroke="white" stroke-width="0.5" fill="none"/>
-            <circle cx="40" cy="150" r="4" fill="white"/>
-            <circle cx="120" cy="100" r="4" fill="white"/>
-            <circle cx="200" cy="20" r="4" fill="white"/>
-          </svg>
-        </div>
-        <span class="cover-top-badge badge-free">FREE</span>
-        <div class="cover-content">
-          <span class="cover-icon-big">📈</span>
-          <div class="cover-book-title">Money Compounding Guide</div>
-          <div class="cover-book-author">Umair Tahir • 2026</div>
-        </div>
-        <div class="cover-price-tag"><span>$0</span></div>
+      <div class="book-cover" style="padding:0;height:240px;overflow:hidden">
+        <img src="cover2.svg" alt="Money Compounding Guide Cover" style="width:100%;height:100%;object-fit:cover;display:block"/>
       </div>
       <div class="book-info">
         <div class="book-card-title">Money Compounding Guide</div>
@@ -487,14 +456,8 @@ footer{background:#040F07;padding:3rem 3rem 1.5rem;display:grid;grid-template-co
   </div>
   <div class="books-grid">
     <div class="book-card reveal reveal-delay-1">
-      <div class="book-cover cover-passive">
-        <div class="cover-geo"><svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg"><circle cx="160" cy="40" r="60" fill="white"/><circle cx="20" cy="200" r="40" fill="white"/></svg></div>
-        <span class="cover-top-badge badge-free">FREE</span>
-        <div class="cover-content">
-          <span class="cover-icon-big">🕌</span>
-          <div class="cover-book-title">Passive Income Blueprint for Young Muslims</div>
-          <div class="cover-book-author">Umair Tahir • 2026</div>
-        </div>
+      <div class="book-cover" style="padding:0;height:240px;overflow:hidden">
+        <img src="cover1.svg" alt="Passive Income Blueprint Cover" style="width:100%;height:100%;object-fit:cover;display:block"/>
       </div>
       <div class="book-info">
         <div class="book-card-title">Passive Income Blueprint for Young Muslims</div>
@@ -504,14 +467,8 @@ footer{background:#040F07;padding:3rem 3rem 1.5rem;display:grid;grid-template-co
       </div>
     </div>
     <div class="book-card reveal reveal-delay-2">
-      <div class="book-cover cover-compound">
-        <div class="cover-geo"><svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg"><polyline points="0,200 40,150 80,160 120,100 160,60 200,20" stroke="white" stroke-width="1" fill="none"/><circle cx="120" cy="100" r="4" fill="white"/></svg></div>
-        <span class="cover-top-badge badge-free">FREE</span>
-        <div class="cover-content">
-          <span class="cover-icon-big">📈</span>
-          <div class="cover-book-title">Money Compounding Guide</div>
-          <div class="cover-book-author">Umair Tahir • 2026</div>
-        </div>
+      <div class="book-cover" style="padding:0;height:240px;overflow:hidden">
+        <img src="cover2.svg" alt="Money Compounding Guide Cover" style="width:100%;height:100%;object-fit:cover;display:block"/>
       </div>
       <div class="book-info">
         <div class="book-card-title">Money Compounding Guide</div>
@@ -648,18 +605,6 @@ footer{background:#040F07;padding:3rem 3rem 1.5rem;display:grid;grid-template-co
 </div>
 
 <script>
-// ── CURSOR ──
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursorRing');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px'});
-function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing)}
-animRing();
-document.querySelectorAll('a,button,.book-card,.cat-card').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cursor.style.width='20px';cursor.style.height='20px';cursor.style.background='var(--gold)';ring.style.width='50px';ring.style.height='50px'});
-  el.addEventListener('mouseleave',()=>{cursor.style.width='12px';cursor.style.height='12px';cursor.style.background='var(--g4)';ring.style.width='36px';ring.style.height='36px'});
-});
-
 // ── PARTICLES ──
 const pContainer=document.getElementById('particles');
 for(let i=0;i<20;i++){
